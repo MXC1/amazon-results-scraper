@@ -190,9 +190,10 @@ def generate_html(results, query):
 
 
 def main():
-    query = "Network switch"  # Example search query
-    pages = 5  # Number of pages to scrape
-    min_rating = 4.3  # Minimum rating filter
+    # Get user inputs for query, pages, and min_rating
+    query = input("Enter Amazon search query: ")
+    pages = int(input("Enter the number of pages to scrape (Default: 10): ") or 10)
+    min_rating = float(input("Enter the minimum rating to filter (Default: 4.3): ") or 4.3)
 
     try:
         results = get_amazon_search_results(query, pages, min_rating)
